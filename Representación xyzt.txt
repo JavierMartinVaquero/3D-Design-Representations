@@ -1,0 +1,15 @@
+ClearAll["Global`*"]
+SetDirectory[NotebookDirectory[]]
+C:\Users\Javier\Desktop\Física\Prácticas\Mathematica\Propagación MB 3 niveles\MBCPR spatial
+FWHM=10;
+τ=20;
+ΩG=20;
+g=Exp[-(x^2+y^2)/FWHM^2]Exp[-t^2/τ^2];
+t=0;
+Plot1=Plot3D[g,{x,-FWHM,FWHM},{y,-FWHM,FWHM},ColorFunction->"Rainbow",ColorFunctionScaling->False,PlotRange->{{-10,10},{-10,10},{0,1}}];
+t=10;
+Plot2=Plot3D[g,{x,-FWHM,FWHM},{y,-FWHM,FWHM},ColorFunction->"Rainbow",ColorFunctionScaling->False,PlotRange->{{-10,10},{-10,10},{0,1}}];
+t=20;
+Plot3=Plot3D[g,{x,-FWHM,FWHM},{y,-FWHM,FWHM},ColorFunction->"Rainbow",ColorFunctionScaling->False,PlotRange->{{-10,10},{-10,10},{0,1}}];
+Plot4=BarLegend[{"Rainbow",{0,1}}];
+GraphicsRow[{Plot1,Plot2,Plot3,Plot4},ImageSize->Full]
